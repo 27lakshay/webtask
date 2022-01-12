@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main class="container">
+            <form id="employee-form" onsubmit="submitForm(event)" novalidate>
+                <div class="row">
+                    <div class="form-control">
+                        <label class="form-control-label" for="firstname">First Name</label>
+                        <input
+                            class="form-control-input"
+                            id="firstname"
+                            type="text"
+                            name="firstname"
+                            autofocus
+                        />
+                        <span class="error-message" aria-live="polite">Please enter First Name</span>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-control-label" for="lastname">Last Name</label>
+                        <input class="form-control-input" id="lastname" type="text" name="lastname"/>
+                        <span class="error-message" aria-live="polite">Please enter Last Name</span>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <label class="form-control-label">Gender</label>
+                    <span id="gender">
+                        <label class="form-control-label" for="male">Male</label>
+                        <input class="form-control-input" id="male" type="radio" name="gender" />
+                        <label class="form-control-label" for="female">Female</label>
+                        <input class="form-control-input" id="female" type="radio" name="gender" />
+                    </span>
+                    <span class="error-message" aria-live="polite">Please select Gender.</span>
+                </div>
+                <div class="row">
+                    <div class="form-control">
+                        <label class="form-control-label">Marital Status</label>
+                        <span id="maritalstatus">
+                            <label class="form-control-label" for="married">Married</label>
+                            <input
+                                class="form-control-input"
+                                onchange="handleMaritalStatus(event)"
+                                value="married"
+                                id="married"
+                                type="radio"
+                                name="maritalstatus"
+                                
+                            />
+                            <label class="form-control-label" for="unmarried">Unmarried</label>
+                            <input
+                                class="form-control-input"
+                                onchange="handleMaritalStatus(event)"
+                                value="unmarried"
+                                id="unmarried"
+                                type="radio"
+                                name="maritalstatus"
+                                
+                            />
+                        </span>
+                        <span class="error-message" aria-live="polite">Please select Marital Status.</span>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-control-label" for="spousename">Name Of Spouse</label>
+                        <input class="form-control-input" disabled id="spousename" type="text" name="spousename" />
+                        <span class="error-message" aria-live="polite">Please enter Spousename.</span>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <label class="form-control-label" for="otherdetails">Other Details</label>
+                    <input class="form-control-input" id="otherdetails" type="text" name="otherdetails" />
+                    <span class="error-message" aria-live="polite">Please enter Spousename.</span>
+                </div>
+                <div class="form-control form-control-checkbox">
+                    <input class="form-control-input" id="terms" type="checkbox" name="terms" />
+                    <label class="form-control-label" for="terms">I accept Terms & Conditions</label>
+                    <span class="error-message" aria-live="polite"></span>
+                </div>
+                <div class="row">
+                    <button onclick="resetForm(event)">Reset</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>
