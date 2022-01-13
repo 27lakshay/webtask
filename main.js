@@ -14,7 +14,7 @@ function submitForm(e) {
     } else {
         el["lastname"].parentElement.classList.remove("invalid");
     }
-    if (el["male"].checked === false && el["unmarried"].checked === false) {
+    if (el["male"].checked === false && el["female"].checked === false) {
         document.getElementById("gender").parentElement.classList.add("invalid");
         emptyFields.push("male");
     } else {
@@ -50,7 +50,7 @@ function submitForm(e) {
     }
 }
 
-function handleMaritalStatus(e) {
+function handleSpouseNameField(e) {
     let el = document.getElementById("spousename");
     if (e.target.value === "married") {
         el.disabled = false;
@@ -62,5 +62,5 @@ function handleMaritalStatus(e) {
 
 function resetForm(e) {
     e.preventDefault();
-    document.getElementById("form").reset();
+    document.getElementById("employee-form").reset();
 }

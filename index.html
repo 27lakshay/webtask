@@ -9,6 +9,7 @@
     </head>
     <body>
         <main class="container">
+            <h2 class="heading">Employee Form</h2>
             <form id="employee-form" onsubmit="submitForm(event)" novalidate>
                 <div class="row">
                     <div class="form-control">
@@ -45,7 +46,7 @@
                             <label class="form-control-label" for="married">Married</label>
                             <input
                                 class="form-control-input"
-                                onchange="handleMaritalStatus(event)"
+                                onchange="handleSpouseNameField(event)"
                                 value="married"
                                 id="married"
                                 type="radio"
@@ -55,7 +56,7 @@
                             <label class="form-control-label" for="unmarried">Unmarried</label>
                             <input
                                 class="form-control-input"
-                                onchange="handleMaritalStatus(event)"
+                                onchange="handleSpouseNameField(event)"
                                 value="unmarried"
                                 id="unmarried"
                                 type="radio"
@@ -74,7 +75,7 @@
                 <div class="form-control">
                     <label class="form-control-label" for="otherdetails">Other Details</label>
                     <input class="form-control-input" id="otherdetails" type="text" name="otherdetails" />
-                    <span class="error-message" aria-live="polite">Please enter Spousename.</span>
+                    <span class="error-message" aria-live="polite">Please enter other details.</span>
                 </div>
                 <div class="form-control form-control-checkbox">
                     <input class="form-control-input" id="terms" type="checkbox" name="terms" />
@@ -82,8 +83,8 @@
                     <span class="error-message" aria-live="polite"></span>
                 </div>
                 <div class="row">
-                    <button onclick="resetForm(event)">Reset</button>
-                    <button type="submit">Submit</button>
+                    <button class="form-button reset" onclick="resetForm(event)">Reset</button>
+                    <button class="form-button save" type="submit">Submit</button>
                 </div>
             </form>
         </main>
