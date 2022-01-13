@@ -43,8 +43,7 @@
 }
 
 .form-control-checkbox {
-    flex-direction: row;
-    align-items: center;
+    margin: 0.5rem 0;
 }
 
 .form-button {
@@ -75,11 +74,11 @@
     opacity: 1;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
     margin-right: 0.5rem;
     cursor: pointer;
 }
-input[type=radio] {
+input[type="radio"] {
     margin-right: 0.5rem;
     cursor: pointer;
 }

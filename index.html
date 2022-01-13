@@ -10,22 +10,16 @@
     <body>
         <main class="container">
             <h2 class="heading">Employee Form</h2>
-            <form id="employee-form" onsubmit="submitForm(event)" novalidate>
+            <form name="employee-form" id="employee-form" onsubmit="submitForm(event)" novalidate>
                 <div class="row">
                     <div class="form-control">
                         <label class="form-control-label" for="firstname">First Name</label>
-                        <input
-                            class="form-control-input"
-                            id="firstname"
-                            type="text"
-                            name="firstname"
-                            autofocus
-                        />
+                        <input class="form-control-input" id="firstname" type="text" name="firstname" autofocus />
                         <span class="error-message" aria-live="polite">Please enter First Name</span>
                     </div>
                     <div class="form-control">
                         <label class="form-control-label" for="lastname">Last Name</label>
-                        <input class="form-control-input" id="lastname" type="text" name="lastname"/>
+                        <input class="form-control-input" id="lastname" type="text" name="lastname" />
                         <span class="error-message" aria-live="polite">Please enter Last Name</span>
                     </div>
                 </div>
@@ -51,7 +45,6 @@
                                 id="married"
                                 type="radio"
                                 name="maritalstatus"
-                                
                             />
                             <label class="form-control-label" for="unmarried">Unmarried</label>
                             <input
@@ -61,7 +54,6 @@
                                 id="unmarried"
                                 type="radio"
                                 name="maritalstatus"
-                                
                             />
                         </span>
                         <span class="error-message" aria-live="polite">Please select Marital Status.</span>
@@ -75,12 +67,13 @@
                 <div class="form-control">
                     <label class="form-control-label" for="otherdetails">Other Details</label>
                     <input class="form-control-input" id="otherdetails" type="text" name="otherdetails" />
-                    <span class="error-message" aria-live="polite">Please enter other details.</span>
                 </div>
                 <div class="form-control form-control-checkbox">
-                    <input class="form-control-input" id="terms" type="checkbox" name="terms" />
-                    <label class="form-control-label" for="terms">I accept Terms & Conditions</label>
-                    <span class="error-message" aria-live="polite"></span>
+                    <div id="terms">
+                        <input class="form-control-input" id="t&s" type="checkbox" name="terms" />
+                        <label class="form-control-label" for="t&s">I accept Terms & Conditions</label>
+                    </div>
+                    <span class="error-message" aria-live="polite">Please accept Terms & Conditions to continue.</span>
                 </div>
                 <div class="row">
                     <button class="form-button reset" onclick="resetForm(event)">Reset</button>

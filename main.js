@@ -16,13 +16,11 @@ function submitForm(e) {
     }
     if (el["male"].checked === false && el["female"].checked === false) {
         document.getElementById("gender").parentElement.classList.add("invalid");
-        emptyFields.push("male");
     } else {
         document.getElementById("gender").parentElement.classList.remove("invalid");
     }
     if (el["married"].checked === false && el["unmarried"].checked === false) {
         document.getElementById("maritalstatus").parentElement.classList.add("invalid");
-        emptyFields.push("married");
     } else {
         document.getElementById("maritalstatus").parentElement.classList.remove("invalid");
     }
@@ -32,17 +30,13 @@ function submitForm(e) {
     } else {
         el["spousename"].parentElement.classList.remove("invalid");
     }
-    if (el["otherdetails"].value === "") {
-        el["otherdetails"].parentElement.classList.add("invalid");
-        emptyFields.push("otherdetails");
-    } else {
-        el["otherdetails"].parentElement.classList.remove("invalid");
-    }
     if (el["terms"].checked === false) {
-        alert("Terms & Conditions must be accepted to continue.");
-        emptyFields.push("terms");
+        document.getElementById("terms").parentElement.classList.add("invalid");
+    } else {
+        document.getElementById("terms").parentElement.classList.remove("invalid");
     }
     if (emptyFields.length > 0) {
+        debugger
         el[`${emptyFields[0]}`].focus();
         return false;
     } else {
