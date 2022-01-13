@@ -57,6 +57,7 @@ function handleSpouseNameField(e) {
     }
     if (e.target.value === "unmarried") {
         el.disabled = true;
+        document.getElementById("maritalstatus").parentElement.classList.remove("invalid");
     }
 }
 
