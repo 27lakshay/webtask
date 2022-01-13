@@ -16,11 +16,13 @@ function submitForm(e) {
     }
     if (el["male"].checked === false && el["female"].checked === false) {
         document.getElementById("gender").parentElement.classList.add("invalid");
+        emptyFields.push("gender");
     } else {
         document.getElementById("gender").parentElement.classList.remove("invalid");
     }
     if (el["married"].checked === false && el["unmarried"].checked === false) {
         document.getElementById("maritalstatus").parentElement.classList.add("invalid");
+        emptyFields.push("maritalstatus");
     } else {
         document.getElementById("maritalstatus").parentElement.classList.remove("invalid");
     }
@@ -32,12 +34,13 @@ function submitForm(e) {
     }
     if (el["terms"].checked === false) {
         document.getElementById("terms").parentElement.classList.add("invalid");
+        emptyFields.push("terms");
     } else {
         document.getElementById("terms").parentElement.classList.remove("invalid");
     }
     if (emptyFields.length > 0) {
-        debugger
-        el[`${emptyFields[0]}`].focus();
+        let temp = document.querySelector(".invalid input[type=text]:not([disabled])");
+        temp && el[`${document.querySelector(".invalid input[type=text]:not([disabled])").name}`].focus();
         return false;
     } else {
         alert("Thank You.");
